@@ -1,0 +1,6 @@
+spotipy
+drive
+flask
+flask_sqlalchemy
+flask-login
+os

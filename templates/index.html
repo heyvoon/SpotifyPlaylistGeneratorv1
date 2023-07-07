@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Form</title>
+</head>
+
+<body>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+    <h1>My Form</h1>
+    <form action="/my-form-handler" method="post">
+        <label for="playlist-id">Playlist ID:</label><br>
+        <input type="text" id="playlist-id" name="playlist-id"><br>
+        <label for="artists">Artists (separated by commas):</label><br>
+        <textarea id="artists" name="artists" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+</body>
+
+</html>
