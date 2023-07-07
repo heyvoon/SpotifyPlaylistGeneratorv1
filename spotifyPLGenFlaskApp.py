@@ -71,15 +71,15 @@ def create_playlist_submit():
     name = request.form['name']
     description = request.form['description']
     token_info = session.get('token_info')
-    if sp_oauth.is_token_expired(token_info):
-        token_info = sp_oauth.refresh_access_token(token_info['refresh_token'])
+    if spotify_auth.sp_oauth.is_token_expired(token_info):
+        token_info = spotify_auth.sp_oauth.refresh_access_token(
+            token_info['refresh_token'])
         session['token_info'] = token_info
     access_token = token_info['access_token']
     sp = spotipy.Spotify(auth=access_token)
     user_id = sp.me()['id']
     create_spotify_playlist(access_token, user_id, name, description)
     return redirect(url_for('index'))
-
 
 @app.route('/update-playlist')
 def update_playlist():
