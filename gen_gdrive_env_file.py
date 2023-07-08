@@ -3,6 +3,6 @@ from google.colab import drive
 drive.mount('/content/drive')
 
 with open('/content/drive/MyDrive/.env', 'w') as f:
-    f.write('SPOTIPY_CLIENT_ID=\n')
-    f.write('SPOTIPY_CLIENT_SECRET=\n')
-    f.write('SPOTIPY_REDIRECT_URI=https://colab.research.google.com/drive/1QbQ3WhGDdgZVlLL6Uof8ezvNc9VbpdGX\n')
+    f.write('SPOTIPY_CLIENT_ID=YOUR_SPOTIPY_CLIENT_ID\n')
+    f.write('SPOTIPY_CLIENT_SECRET=YOUR_SPOTIPY_CLIENT_SECRET\n')
+    f.write('SPOTIPY_REDIRECT_URI=YOUR_SPOTIPY_REDIRECT_URI\n')
